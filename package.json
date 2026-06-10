@@ -1,0 +1,17 @@
+{
+  "name": "sumeverywhere",
+  "version": "0.2.0",
+  "description": "Summarize any page locally — AI on-device with universal extractive fallback.",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "zip": "node build/zip.mjs",
+    "dist": "node build/build.mjs && node build/zip.mjs"
+  },
+  "keywords": ["extension", "summarizer", "gemini-nano", "cross-browser"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
+  }
+}

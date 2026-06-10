@@ -1,0 +1,13 @@
+# Dependencias
+node_modules/
+
+# Artefactos generados (se regeneran con `npm run build`)
+dist/
+
+# Playwright MCP / capturas temporales
+.playwright-mcp/
+*.log
+
+# SO
+Thumbs.db
+.DS_Store

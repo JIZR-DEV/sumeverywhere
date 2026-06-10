@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="donate.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #3b82f6;
+      --surface: #ffffff;
+      --surface-2: #f3f4f6;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --surface: #1f2937; --surface-2: #374151; --text: #f9fafb; --text-muted: #9ca3af; --border: #4b5563; }
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--surface);
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    .logo { font-size: 48px; text-align: center; margin-bottom: 8px; color: var(--accent); }
+    h1 { font-size: 26px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+    .tagline { text-align: center; color: var(--text-muted); margin-bottom: 32px; font-size: 15px; }
+    h2 { font-size: 17px; font-weight: 600; margin-bottom: 14px; }
+    ol { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+    li { line-height: 1.6; }
+    .donate { margin-top: 40px; }
+  </style>
+  <title data-i18n="extName">Welcome — SumEverywhere</title>
+</head>
+<body>
+  <div class="logo" aria-hidden="true">&#9651;</div>
+  <h1 data-i18n="welcomeHeading">Thanks for installing!</h1>
+  <p class="tagline" data-i18n="extDescription">Summarize any page locally — never fails.</p>
+
+  <h2 data-i18n="welcomeHowTo">How to start</h2>
+  <ol>
+    <li data-i18n="welcomeStep1">Navigate to any web page you want to summarize.</li>
+    <li data-i18n="welcomeStep2">Click the SumEverywhere icon in your browser toolbar.</li>
+  </ol>
+
+  <section class="donate">
+    <p class="donate-heading" data-i18n="donateHeading">Support this project</p>
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

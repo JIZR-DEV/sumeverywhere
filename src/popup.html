@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="donate.css">
+  <title data-i18n="extName">SumEverywhere</title>
+</head>
+<body>
+  <header class="popup-header">
+    <span class="logo-icon" aria-hidden="true">&#9651;</span>
+    <h1 class="popup-title" data-i18n="extName">SumEverywhere</h1>
+  </header>
+
+  <!-- Estado del motor -->
+  <div id="engine-status" class="engine-status hidden" role="status" aria-live="polite"></div>
+
+  <!-- Barra de progreso de descarga del modelo -->
+  <div id="download-section" class="download-section hidden">
+    <p id="download-label" class="download-label" data-i18n="downloadProgressLabel">Downloading AI model…</p>
+    <progress id="download-progress" class="download-progress" value="0" max="100"></progress>
+    <button id="download-btn" type="button" class="btn btn-secondary" data-i18n="downloadStartBtn">Download model</button>
+  </div>
+
+  <!-- Opciones rapidas inline -->
+  <div class="quick-options">
+    <label class="option-label" for="length-select" data-i18n="optionsDefaultLength">Length</label>
+    <select id="length-select" class="option-select">
+      <option value="short" data-i18n="lengthShort">Short</option>
+      <option value="medium" selected data-i18n="lengthMedium">Medium</option>
+      <option value="long" data-i18n="lengthLong">Long</option>
+    </select>
+    <label class="option-label" for="format-select" data-i18n="optionsDefaultFormat">Format</label>
+    <select id="format-select" class="option-select">
+      <option value="paragraph" data-i18n="formatParagraph">Paragraph</option>
+      <option value="bullets" selected data-i18n="formatBullets">Bullets</option>
+      <option value="key-points" data-i18n="formatKeyPoints">Key points</option>
+    </select>
+  </div>
+
+  <!-- Boton principal -->
+  <button id="summarize-btn" type="button" class="btn btn-primary">
+    <span data-i18n="popupSummarizeBtn">Summarize this page</span>
+  </button>
+
+  <!-- Area de resultado -->
+  <section id="result-section" class="result-section hidden" aria-live="polite">
+    <div class="result-header">
+      <h2 class="result-heading" data-i18n="summaryResultHeading">Summary</h2>
+      <span id="engine-badge" class="engine-badge"></span>
+    </div>
+    <div id="result-text" class="result-text" role="article"></div>
+    <button id="copy-btn" type="button" class="btn btn-secondary" data-i18n="summaryCopyBtn">Copy</button>
+  </section>
+
+  <!-- Mensaje de error -->
+  <div id="error-msg" class="error-msg hidden" role="alert" aria-live="assertive"></div>
+
+  <!-- Seccion de donacion -->
+  <section class="donate">
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <!-- Footer con enlace a opciones -->
+  <footer class="popup-footer">
+    <a id="options-link" href="#" class="footer-link" data-i18n="optionsTitle">Options</a>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <a id="privacy-link" href="#" class="footer-link" data-i18n="privacyLink">Privacy</a>
+  </footer>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+  <script src="summarizer-nano.js"></script>
+  <script src="summarizer-fallback.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

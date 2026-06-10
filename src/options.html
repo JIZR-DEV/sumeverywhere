@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="donate.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #3b82f6;
+      --surface: #ffffff;
+      --surface-2: #f3f4f6;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --error: #dc2626;
+      --success: #16a34a;
+      --radius: 8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --surface: #1f2937; --surface-2: #374151; --text: #f9fafb; --text-muted: #9ca3af; --border: #4b5563; }
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--surface);
+      max-width: 560px;
+      margin: 32px auto;
+      padding: 0 16px 40px;
+    }
+    h1 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+    h2 { font-size: 15px; font-weight: 600; margin: 24px 0 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+    .form-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+    label { font-size: 13px; font-weight: 500; }
+    select {
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      color: var(--text);
+      font-size: 14px;
+    }
+    .stats-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .stats-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+    .stats-table td:last-child { text-align: right; font-weight: 600; color: var(--accent); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 8px 16px; border: none; border-radius: var(--radius);
+      font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s;
+    }
+    .btn-danger { background: #fef2f2; color: var(--error); border: 1px solid #fecaca; margin-top: 8px; }
+    .btn-danger:hover { background: #fee2e2; }
+    .confirm-msg { font-size: 12px; color: var(--success); margin-top: 6px; }
+    .hidden { display: none !important; }
+    .donate { margin-top: 32px; }
+  </style>
+  <title data-i18n="optionsTitle">Options — SumEverywhere</title>
+</head>
+<body>
+  <h1 data-i18n="optionsTitle">Options</h1>
+
+  <form id="options-form" autocomplete="off">
+    <h2 data-i18n="optionsPreferredEngine">Preferred engine</h2>
+    <div class="form-row">
+      <label for="engine-select" data-i18n="optionsPreferredEngine">Preferred engine</label>
+      <select id="engine-select">
+        <option value="auto" data-i18n="optionsEngineAuto">Automatic (AI if available)</option>
+        <option value="nano" data-i18n="optionsEngineNano">Gemini Nano (AI on-device)</option>
+        <option value="fallback" data-i18n="optionsEngineFallback">Extractive (local JS)</option>
+      </select>
+    </div>
+
+    <h2 data-i18n="optionsDefaultLength">Default length</h2>
+    <div class="form-row">
+      <label for="length-select" data-i18n="optionsDefaultLength">Default length</label>
+      <select id="length-select">
+        <option value="short" data-i18n="lengthShort">Short</option>
+        <option value="medium" selected data-i18n="lengthMedium">Medium</option>
+        <option value="long" data-i18n="lengthLong">Long</option>
+      </select>
+    </div>
+
+    <h2 data-i18n="optionsDefaultFormat">Default format</h2>
+    <div class="form-row">
+      <label for="format-select" data-i18n="optionsDefaultFormat">Default format</label>
+      <select id="format-select">
+        <option value="paragraph" data-i18n="formatParagraph">Paragraph</option>
+        <option value="bullets" selected data-i18n="formatBullets">Bullets</option>
+        <option value="key-points" data-i18n="formatKeyPoints">Key points</option>
+      </select>
+    </div>
+  </form>
+
+  <h2 data-i18n="optionsStatsHeading">Statistics</h2>
+  <table class="stats-table">
+    <tbody>
+      <tr>
+        <td data-i18n="optionsStatsNano">Summaries with Gemini Nano</td>
+        <td id="stat-nano">0</td>
+      </tr>
+      <tr>
+        <td data-i18n="optionsStatsFallback">Summaries with extractive fallback</td>
+        <td id="stat-fallback">0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button id="clear-btn" type="button" class="btn btn-danger" data-i18n="optionsClearData">Clear local data</button>
+  <p id="cleared-msg" class="confirm-msg hidden" data-i18n="optionsClearedConfirm">Data cleared.</p>
+
+  <section class="donate">
+    <p class="donate-heading" data-i18n="donateHeading">Support this project</p>
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

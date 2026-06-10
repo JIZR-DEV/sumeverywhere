@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1280px;height:800px;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;
+       background:linear-gradient(135deg,#0f2d3d 0%,#0e7490 55%,#155e75 100%);color:#fff;
+       display:flex;align-items:center;justify-content:center;gap:80px;padding:0 80px}
+  .headline{max-width:440px}
+  .badge-top{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.5px;
+             color:#cffafe;background:rgba(207,250,254,.12);border:1px solid rgba(207,250,254,.3);
+             padding:6px 14px;border-radius:99px;margin-bottom:22px}
+  .headline h1{font-size:50px;font-weight:800;letter-spacing:-1.2px;line-height:1.08}
+  .headline p{font-size:21px;color:#cffafe;margin-top:18px;line-height:1.5}
+  .popup{width:440px;background:#fff;color:#111827;border-radius:18px;
+         box-shadow:0 32px 72px rgba(0,0,0,.5);overflow:hidden}
+  .ph{display:flex;align-items:center;gap:11px;padding:16px 18px;border-bottom:1px solid #eee}
+  .ph .logo{width:30px;height:30px;border-radius:8px;
+            background:linear-gradient(135deg,#60a5fa,#6366f1 55%,#7c3aed)}
+  .ph .t{font-weight:700;font-size:17px}
+  .ph .gear{margin-left:auto;opacity:.45;font-size:18px}
+  .status{margin:14px 18px 0;font-size:13px;font-weight:600;color:#0e7490;
+          background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:7px 11px}
+  .opts{display:flex;align-items:center;gap:9px;padding:13px 18px 4px;font-size:13px;color:#6b7280}
+  .opts .pill{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:3px 10px;
+              color:#111827;font-weight:600}
+  .result{margin:12px 18px 0;background:#f3f4f6;border-radius:10px;padding:14px}
+  .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .rh .lab{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.6px}
+  .rh .eng{font-size:11px;font-weight:700;color:#fff;background:#0891b2;border-radius:99px;padding:3px 10px}
+  .result ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .result li{display:flex;gap:9px;font-size:14px;line-height:1.5;color:#1f2937}
+  .result li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;
+                     background:#0891b2;margin-top:7px}
+  .copy{margin:14px 18px 18px;display:inline-block;font-size:12px;font-weight:600;color:#374151;
+        background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:7px 14px}
+</style></head><body>
+  <div class="headline">
+    <span class="badge-top">NEVER FAILS</span>
+    <h1>No built-in AI? It still works.</h1>
+    <p>When Gemini Nano isn't available — older hardware, Firefox, or a metered connection — a pure-JavaScript extractive engine takes over instantly. Same one click, still 100% local.</p>
+  </div>
+  <div class="popup">
+    <div class="ph"><span class="logo"></span><span class="t">SumEverywhere</span><span class="gear">&#9881;</span></div>
+    <div class="status">Extractive mode — no AI model required</div>
+    <div class="opts"><span>Length</span><span class="pill">Short</span><span>Format</span><span class="pill">Bullets</span></div>
+    <div class="result">
+      <div class="rh"><span class="lab">Summary</span><span class="eng">Extractive · local</span></div>
+      <ul>
+        <li>The piece ranks the most representative sentences using a lightweight scoring algorithm.</li>
+        <li>It runs entirely in JavaScript, so any device can produce a usable summary offline.</li>
+        <li>The result keeps the original wording, ideal when accuracy matters more than rephrasing.</li>
+      </ul>
+    </div>
+    <span class="copy">&#128203; Copy</span>
+  </div>
+</body></html>

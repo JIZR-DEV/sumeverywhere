@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #3b82f6;
+      --surface: #ffffff;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --surface: #1f2937; --text: #f9fafb; --text-muted: #9ca3af; --border: #4b5563; }
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--surface);
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+    p { margin-bottom: 16px; }
+  </style>
+  <title data-i18n="privacyHeading">Privacy Policy — SumEverywhere</title>
+</head>
+<body>
+  <h1 data-i18n="privacyHeading">Privacy Policy</h1>
+  <div id="privacy-body">
+    <p data-i18n="privacyBody">
+      SumEverywhere does not collect, transmit or store any personal data or page content outside your device.
+      All text extraction and summarization happens locally on your device.
+      The AI summarizer (Gemini Nano) runs entirely on-device.
+      The extractive fallback is pure JavaScript with no network calls.
+      No browsing history, no page content, and no summaries are ever sent to any server.
+      The only data stored is your preferences (preferred engine, length, format) in browser.storage.local,
+      which remains on your device and can be deleted at any time from the Options page.
+    </p>
+  </div>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>
