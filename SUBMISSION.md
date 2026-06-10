@@ -40,7 +40,7 @@ https://chrome.google.com/webstore/devconsole
 | Screenshots (minimo 1, 1280x800 o 640x400) | Captura del popup con un resumen activo; captura de Options |
 | Small promo tile (440x280) | Opcional pero recomendado |
 | Privacy practices | Completar el formulario indicando: no se recopilan datos del usuario; no se transmite contenido de paginas a servidores externos |
-| Privacy Policy URL | https://[tu-dominio]/privacy  o apuntar a dist/chrome/privacy.html hosteada |
+| Privacy Policy URL | https://gist.github.com/JIZR-DEV/a33ab844a99ff005087e515dc3e09eb4 |
 
 ### Justificacion de permisos (para el formulario "Permissions justification")
 
@@ -103,9 +103,9 @@ https://addons.mozilla.org/developers/
 | Description | Ver bloque "Descripcion larga" de Chrome (valida para AMO tambien) |
 | Categories | Appearance > Other o Productivity |
 | Tags | summarizer, ai, privacy, offline, gemini-nano |
-| Homepage URL | URL de tu repositorio o pagina del proyecto |
+| Homepage URL | https://github.com/JIZR-DEV/sumeverywhere |
 | Support Email | joseignaciozavalarocha@gmail.com |
-| Privacy Policy | URL a privacy.html hosteada, o la URL del repositorio con el archivo |
+| Privacy Policy | https://gist.github.com/JIZR-DEV/a33ab844a99ff005087e515dc3e09eb4 |
 | License | ISC |
 | Screenshots (minimo 1) | Captura del popup con un resumen; captura de Options |
 
@@ -153,24 +153,26 @@ browser-polyfill.js is the unminified build of webextension-polyfill@0.12.x
 - [x] browser-polyfill.js incluido sin minificar
 - [x] source.zip preparado (excluye node_modules, .git, dist)
 - [x] Instrucciones de build reproducible listas para el revisor
-- [ ] Privacy Policy URL hosteada (pendiente: tienes que subir privacy.html o apuntar a tu repo)
-- [ ] Capturas de pantalla preparadas (minimo 1, preferiblemente 2-3)
+- [x] Privacy Policy URL hosteada: https://gist.github.com/JIZR-DEV/a33ab844a99ff005087e515dc3e09eb4
+- [x] Capturas de pantalla preparadas (5 × 1280×800 en assets/screenshots/)
+- [x] Iconos definitivos de marca (16/48/128 en src/icons/)
+- [x] Repositorio publico: https://github.com/JIZR-DEV/sumeverywhere
 
 ---
 
 ## 3. Notas generales
 
-### Iconos placeholder
-Los iconos actuales en src/icons/ son PNGs de color azul placeholder.
-Reemplazalos con iconos definitivos antes de publicar. Tras reemplazarlos,
-ejecuta de nuevo:
-  node build/build.mjs && node build/zip.mjs
-para regenerar los ZIPs con los nuevos iconos.
+### Iconos
+Iconos definitivos de marca en src/icons/ (16/48/128): metafora de resumen
+(lineas que se condensan) + chispa de IA sobre degradado azul->indigo->violeta.
+Fuente vectorial en assets/icon-src.html. Para regenerarlos: servir el proyecto
+con `node build/screenshot-server.mjs` y capturar a 16/48/128 con Playwright.
 
 ### Privacy Policy
-privacy.html esta incluida en el paquete. Para cumplir con el requisito de URL externa:
-- Opcion A: Hostea privacy.html en GitHub Pages u otro servidor estatico.
-- Opcion B: Usa la URL raw del archivo en tu repositorio publico.
+Publicada como gist publico (markdown bilingue EN/ES):
+  https://gist.github.com/JIZR-DEV/a33ab844a99ff005087e515dc3e09eb4
+Usar esa URL en el campo "Privacy Policy URL" de ambas stores. privacy.html
+tambien va empaquetada en la extension (enlace en el popup).
 
 ### Donaciones
 Los enlaces de donacion (Ko-fi/PayPal) estan en donate.html y en Options.
